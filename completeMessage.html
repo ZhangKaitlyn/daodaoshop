@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+  <title>首页</title>
+
+  <!-- Bootstrap -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/crop.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/completeMessage.css">
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+  <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <header>
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html"><img src="images/daodaoLogo.png" alt=""></a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <a class="showCaseBtn" href="case.html">案例展示</a>
+            </li>
+            <li id="user-noShow">
+              <a href="#" class="navSmallBtn loginBtn modalStart" data-toggle="modal" data-target="#loginBtn">马上登录</a>
+            </li>
+            <li id="user-Show" class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                Dropdown
+                <span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a id="exitBtn" href="#">退出登录</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <!-- /.navbar-collapse --> </div>
+      <!-- /.container-fluid --> </nav>
+  </header>
+  <section class="container-fluid">
+    <div class="row">
+      <h3 class="formHeader col-md-offset-2">完善信息</h3>
+      <div class="col-md-8 col-md-offset-2" id="businessDetail">
+        <div class="col-md-5 profileBox">
+          <div class="cropped">
+            <img src="images/head-portrait-img.gif"></div>
+          <div class="imageBox">
+            <div class="thumbBox"></div>
+            <div class="spinner" style="display: none">Loading...</div>
+          </div>
+
+          <div class="btnGroup">
+            <form id="uploadForm" name="form" class="btn btn-default uploadBtn">
+              <a href="javascript:void(0)">
+                <label for="upload-file">上传图像</label>
+              </a>
+              <input id="upload-file" type="file" name="logo"/>
+            </form>
+            <button class="btn btn-default" id="btnCrop" type="submit">裁切</button>
+            <button class="btn btn-default" id="btnZoomIn">+</button>
+            <button class="btn btn-default" id="btnZoomOut">-</button>
+          </div>
+        </div>
+
+        <div class="col-md-7 messageBox">
+          <form id="changeMessageForm" class="form-horizontal">
+            <div class="form-group">
+              <label for="userName" class="col-sm-2 control-label">姓名</label>
+              <div class="col-sm-10">
+                <input id="userName" type="text" class="form-control" required></div>
+            </div>
+            <div class="form-group">
+              <label for="shopName" class="col-sm-2 control-label">店铺名</label>
+              <div class="col-sm-10">
+                <input id="shopName" type="text" class="form-control" required></div>
+            </div>
+            <div class="form-group">
+              <label for="shopAddr" class="col-sm-2 control-label">地址</label>
+              <div class="col-sm-10">
+                <input id="shopAddr" type="text" class="form-control" required></div>
+            </div>
+            <div class="form-group">
+              <label for="email" class="col-sm-2 control-label">邮箱</label>
+              <div class="col-sm-10">
+                <input id="userMail" type="email" class="form-control" required ></div>
+            </div>
+            <div class="form-group">
+              <label for="shopIntroduct" class="col-sm-2 control-label">店铺简介</label>
+              <div class="col-sm-10">
+                <textarea id="shopDescription" class="form-control" rows="3" required></textarea>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-warning col-md-offset-5">保存修改</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="col-md-10 col-md-offset-1">
+      <div class="col-md-3 footerLeft col-sm-6">
+        <p>&copy; 2015 DaoDao Corporation</p>
+        <p>All rights reserved.沪ICP备09020061号</p>
+      </div>
+      <div class="footerRight col-md-9 col-sm-6">
+        <a href="about.html">关于我们</a>
+        <a href="#" data-toggle="modal" data-target="#callback">意见反馈</a>
+        <a class="downloadBtn" href="#">app下载</a>
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- 登录弹出层 -->
+  <div class="modal fade" id="loginBtn" role="dialog" aria-labelledby="myModalLabel" aria-describedby="登录">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <h3 class="modal-title">登&nbsp&nbsp&nbsp录</h3>
+        </div>
+        <div class="modal-body clearfix">
+          <div class="profile">
+            <img src="images/head-portrait-img.gif" height="90" width="90"></div>
+
+          <form id="loginForm" class=" col-md-10 col-md-offset-1"  autocomplete="on" action="http://daodao.90door.com/api/auth/login" method="post">
+            <div class="form-group">
+              <label class="sr-only" for="phonenumber">手机号</label>
+              <input type="tel" class="form-control" id="phonenumber-login" placeholder="手机号"  required pattern="^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1}))+\d{8})$" title="请输入正确的手机号"></div>
+            <div class="form-group">
+              <label class="sr-only" for="password">密码</label>
+              <input type="password" class="form-control" id="password-login" placeholder="密码" required></div>
+            <button type="submit" class="btn btn-default  btn-block">马上登录</button>
+            <a href="#" class="forgetPssword col-md-12">忘记密码</a>
+          </form>
+
+        </div>
+        <div class="modal-footer">
+          <p>
+            还没有刀刀账户？
+            <a class="modalStart" href="#" data-toggle="modal" data-target="#registerBtn" data-dismiss="modal">马上注册！</a>
+          </p>
+        </div>
+      </div>
+      <!-- /.modal-content --> </div>
+    <!-- /.modal-dialog --> </div>
+
+  <!-- 注册弹出层 -->
+  <div class="modal fade bs-example-modal-sm" id="registerBtn" role="dialog" aria-labelledby="myModalLabel" aria-describedby="注册">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <h3 class="modal-title">注 册</h3>
+        </div>
+        <div class="modal-body clearfix">
+          <div class="profile">
+            <img src="images/head-portrait-img.gif" height="90" width="90"></div>
+
+          <form id="registerForm" class=" col-md-10 col-md-offset-1" action="http://daodao.90door.com/api/auth/register" method="post">
+            <div class="form-group">
+              <label class="sr-only" for="phonenumber">手机号</label>
+              <input type="tel" class="form-control" id="phonenumber-register" placeholder="手机号"  required pattern="^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1}))+\d{8})$" title="请输入正确的手机号"></div>
+            <div class="form-group">
+              <label class="sr-only" for="password">密码</label>
+              <input type="password" class="form-control" id="password-register" placeholder="密码" required></div>
+            <div class="form-group form-inline">
+              <label class="sr-only" for="rePassword">验证码</label>
+              <input type="text" class="form-control" id="verifyPassword" placeholder="验证码" required>
+              <a id="accessBtn" class="acessBtn" href="#">获取验证码</a>
+              &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+            </div>
+            <button id="register" type="submit" class="btn btn-default  btn-block">马上注册</button>
+          </form>
+
+        </div>
+        <div class="modal-footer">
+          <p>
+            已有刀刀账户？
+            <a class="modalStart" href="#" data-toggle="modal" data-target="#loginBtn" data-dismiss="modal">马上登录！</a>
+          </p>
+        </div>
+      </div>
+      <!-- /.modal-content --> </div>
+    <!-- /.modal-dialog --> </div>
+  <!-- /.modal -->
+
+  <!-- 意见反馈弹出层 -->
+  <div class="modal fade bs-example-modal-sm" id="callback" role="dialog" aria-labelledby="myModalLabel" aria-describedby="意见反馈">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <h3 class="modal-title">意见反馈</h3>
+        </div>
+        <div class="modal-body clearfix">
+          <form class=" col-md-10 col-md-offset-1">
+            <div class="form-group form-inline clearfix">
+              <label class="sr-only" for="userName">意见反馈</label>
+              <textarea class="col-md-12" rows="9" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-default  btn-block">提交</button>
+          </form>
+        </div>
+      </div>
+      <!-- /.modal-content --> </div>
+    <!-- /.modal-dialog --> </div>
+
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="js/jquery-2.1.4.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/cropbox.js"></script>
+  <script src="js/shopLogo.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="js/bootstrap.min.js"></script>
+
+</body>
+</html>

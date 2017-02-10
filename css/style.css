@@ -1,0 +1,177 @@
+*{
+	margin: 0;
+	padding: 0;
+	font-family: "微软雅黑";
+	color: #666;
+}
+body{
+	padding-right: 0px !important;
+}
+.modal-open{
+    overflow: initial !important;
+}
+.modal{
+	padding-right: 0px !important;
+}
+.navbar-brand{
+	padding: 2px 15px;
+}
+textarea{
+	resize:none;
+}
+img{
+	width: 100%;
+	height: auto;
+}
+/*ul li{
+d
+}*/
+h1{
+	font-size: 40px;
+}
+a:focus{
+	border: 0px;
+}
+
+
+.navbar{
+	border-radius: 0px;
+	border-top: 3px solid #F48653;
+	margin-bottom: 0px;
+}
+.navbar-default .navbar-brand{
+	color: #F48653;
+}
+.showCaseBtn{
+	font-size: 18px;
+}
+.navSmallBtn{
+	font-size: 14px;
+}
+.nav > li > .loginBtn{
+	padding-right: 0px;
+}
+.nav > li > .registerBtn{
+	padding-left: 0px;
+}
+/*.loginBtn::after{
+	content: "/";
+}*/
+
+/*登录注册弹出层*/
+.modal-dialog{
+	width: 450px;
+}
+.modal-header{
+	text-align: center;
+	border-bottom: 0px solid;
+}
+.modal-header .close{
+	position: absolute;
+	right: 15px;
+}
+.modal-body .form-group {
+    margin-bottom: 20px;
+}
+.modal-body .profile{
+	width: 90px;
+	margin: 0px auto 15px;
+}
+.modal-body .profile img{
+	border-radius: 50%;
+}
+.modal-body .form-control{
+	height: 50px;
+	font-size: 16px;
+}
+.modal-body .btn-default{
+	height: 50px;
+	background-color: #FF5252;
+	color: #FFF;
+	font-size: 16px;
+}
+.modal-body .btn-default:hover{
+	background-color: #FB5E5E;
+}
+.modal-footer{
+	text-align: center;
+	border-top: 0px solid;
+	color: #666;
+}
+.acessBtn{
+	padding-left: 12px;
+}
+.modal-footer a, .acessBtn,.modal-footer a:hover, .acessBtn:hover{
+	color: #FF5252;
+}
+.forgetPssword{
+	text-align: center;
+	color: #666;
+	margin-top: 20px;
+}
+.forgetPssword:hover{
+	color: #FF5252;
+}
+#callback textarea{
+	width: 100%;
+	padding: 0px;
+}
+#callback .btn-block{
+	margin: 30px auto;
+}
+.btn-warning{
+	background-color: #F48653;
+	padding: 10px 35px;
+	font-size: 24px;
+	border-radius: 25px;
+	border: 0px;
+}
+.btn-warning:hover{
+	background-color: hsl(17, 98%, 59%);
+	border: 0px;
+}
+
+
+
+
+*::-moz-selection {
+	color: white;
+	background-color:hsl(19, 88%, 64%);
+} 
+*::selection {
+	color: white;
+	background:hsl(19, 88%, 64%);
+} 
+
+footer .col-md-10{
+	border-top: 1px solid #666;
+	margin-top: 100px;
+	padding: 20px 0px 5px 0px;
+	color: #666;
+	font-size: 14px;
+}
+.footerLeft{
+	padding-left: 0px;
+}
+.footerRight{
+	padding-right: 0px;
+	margin-top: 7px;
+	text-align: right;
+}
+.footerRight a{
+	color: #666;
+	padding: 10px 12px;
+}
+.footerRight .downloadBtn{
+	padding-right: 0px;
+}
+
+@media(max-width: 786px){
+	.modal-dialog{
+		width: 80%;
+		margin: 10px auto;
+	}
+	.footerRight,.footerLeft{
+		text-align: center;
+	}
+}
